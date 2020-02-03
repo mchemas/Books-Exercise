@@ -1,0 +1,52 @@
+﻿@model Book
+
+<h2> New Book </h2>
+
+<form asp-action="InsertBook" method="post" class="form-horizontal" role="form">
+
+    <div class="form-group">
+        <label asp-for="BookName" class="col-md-2 control-label"></label>
+        <div class="col-md-5">
+            <input asp-for="BookName" class="form-control" />
+            <span asp-validation-for="BookName" class="text-danger">@ViewBag.duplicate</span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="AuthorName" class="col-md-2 control-label"></label>
+        <div class="col-md-5">
+            <input asp-for="AuthorName" class="form-control" />
+            <span asp-validation-for="AuthorName" class="text-danger"></span>
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Price" class="col-md-2 control-label"></label>
+        <div class="col-md-5">
+            <input asp-for="Price" class="form-control" />
+            <span asp-validation-for="Price" class="text-danger"></span>
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <label asp-for="PublisherId" class="col-md-2 control-label">Publisher</label>
+        <select asp-for="PublisherId" id="PublisherId">
+            <option value="0" selected="selected"></option>
+            <option value="1">Scholastic</option>
+            <option value="2">Picador</option>
+            <option value="3">Penguin Random House</option>
+            <option value="4">Hachette Livre</option>
+            <option value="5">Wiley</option>
+        </select>
+        <span asp-validation-for="PublisherId" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-5">
+            <input type="submit" class="btn btn-primary" value="Insert" />
+        </div>
+    </div>
+
+</form>

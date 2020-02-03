@@ -1,0 +1,23 @@
+﻿@model Book
+<h2> Delete Book </h2>
+<br />
+<h3>Are you sure you want to delete this?</h3>
+<br />
+
+<form asp-action="DeleteBookDb" method="post"class="form-horizontal" role="form">
+    <div class="thumbnail">
+        <div class="caption-full">
+            <h4>@Model.BookName</h4>
+            <h4>@Model.AuthorName</h4>
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-5">
+            <input type="submit" class="btn btn-danger" value="Delete" />
+        </div>
+    </div>
+
+</form>
+

@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <link href="~/lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
+        <link rel="stylesheet" href="~/content/site.css" />
+    </head>
+    <body>
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-collapse collapse">
+                    <ul class="navbar navbar-nav">
+                        <li><a asp-controller="Home" asp-action="Index" class="navbar-brand">Mike's Books</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
+        <div class="container body-content">
+            <div class="row">
+                @RenderBody()
+            </div>
+        </div>
+    </body>
+</html>

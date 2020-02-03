@@ -1,0 +1,48 @@
+﻿@model HomeViewModel
+
+<br />
+<h4>@Model.Title</h4>
+
+
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Author</th>
+                <th scope="col">Price</th>
+                <th scope="col">Publisher</th>
+                <th scope="col">Time Saved</th>
+                <th scope="col">
+                    <button type="button" class="btn btn-light">
+                        <a asp-controller="Home" asp-action="InsertBook">Insert</a>
+                    </button>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var book in Model.Books)
+            {
+                <tr>
+                    <th>@book.Id</th>
+                    <th>@book.BookName</th>
+                    <th>@book.AuthorName</th>
+                    <th>$@book.Price</th>
+                    <th>@book.PublisherName</th>
+                    <th>No Time</th>
+                    <th>
+                        <button type="button" class="btn btn-light">
+                            <a asp-controller="Home" asp-action="UpdateBook" asp-route-id="@book.Id">Update</a>
+                        </button> | 
+                        <button type="button" class="btn btn-light">
+                            <a asp-controller="Home" asp-action="DeleteBook" asp-route-id="@book.Id">Delete</a>
+                        </button>
+                    </th>
+                </tr>
+            }
+        </tbody>
+        </table>
+
+
